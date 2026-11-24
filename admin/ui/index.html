@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ZиО · админка</title>
+    <meta name="robots" content="noindex, nofollow" />
+    <link rel="icon" type="image/png" href="../assets/img/zio-icon.png" />
+    <link rel="stylesheet" href="/admin/admin.css" />
+  </head>
+  <body>
+    <!-- экран входа / первого запуска -->
+    <div class="gate" id="gate" hidden>
+      <form class="gate__card" id="gateForm">
+        <p class="gate__mark" aria-hidden="true">ZИО</p>
+        <h1 class="gate__title" id="gateTitle">Вход в админку</h1>
+        <p class="gate__text" id="gateText">Пароль хранится только на этом компьютере.</p>
+
+        <label class="field">
+          <span class="field__label">Пароль</span>
+          <input class="field__input" type="password" id="gatePassword" autocomplete="current-password" required minlength="6" />
+        </label>
+
+        <label class="field" id="gateRepeatWrap" hidden>
+          <span class="field__label">Повтори пароль</span>
+          <input class="field__input" type="password" id="gateRepeat" autocomplete="new-password" />
+        </label>
+
+        <p class="gate__error" id="gateError" role="alert"></p>
+        <button class="btn btn--primary" type="submit" id="gateSubmit">Войти</button>
+      </form>
+    </div>
+
+    <!-- рабочее место -->
+    <div class="app" id="app" hidden>
+      <header class="topbar">
+        <div class="topbar__brand">
+          <span class="topbar__mark" aria-hidden="true">ZИО</span>
+          <span class="topbar__sub">админка</span>
+        </div>
+
+        <div class="topbar__actions">
+          <span class="dirty" id="dirty" hidden>есть несохранённые правки</span>
+          <a class="btn btn--ghost btn--sm" href="/" target="_blank" rel="noopener">Открыть сайт</a>
+          <button class="btn btn--ghost btn--sm" id="btnBuild" type="button">Собрать</button>
+          <button class="btn btn--ghost btn--sm" id="btnZip" type="button">ZIP</button>
+          <button class="btn btn--ghost btn--sm" id="btnExport" type="button" title="Скачать content.json">Копия</button>
+          <button class="btn btn--ghost btn--sm" id="btnImport" type="button" title="Заменить контент из content.json">Импорт</button>
+          <button class="btn btn--primary btn--sm" id="btnSave" type="button">Сохранить</button>
+          <button class="btn btn--ghost btn--sm" id="btnLogout" type="button">Выйти</button>
+        </div>
+      </header>
+
+      <div class="layout">
+        <nav class="sidebar" id="sidebar" aria-label="Разделы"></nav>
+        <main class="editor" id="editor"></main>
+      </div>
+
+      <div class="statusbar">
+        <span id="statusText">Готово</span>
+        <span class="statusbar__spacer"></span>
+        <span id="statusStats"></span>
+      </div>
+    </div>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <input type="file" id="filePicker" accept="image/png,image/jpeg,image/webp" hidden />
+    <input type="file" id="jsonPicker" accept="application/json,.json" hidden />
+
+    <script src="/admin/admin.js" type="module"></script>
+  </body>
+</html>
