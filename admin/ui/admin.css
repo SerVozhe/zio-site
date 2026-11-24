@@ -1,0 +1,659 @@
+/* ==========================================================================
+   ZиО — админка. Тот же карбон и оранжевый, что на сайте.
+   ========================================================================== */
+
+:root {
+  --ink: #141517;
+  --ink-2: #1a1b1e;
+  --ink-3: #212327;
+  --line: rgba(255, 255, 255, 0.12);
+  --line-soft: rgba(255, 255, 255, 0.06);
+  --white: #fff;
+  --muted: #a4a8b0;
+  --muted-2: #787c85;
+  --accent: #ff6600;
+  --accent-soft: rgba(255, 102, 0, 0.14);
+  --danger: #ff0055;
+  --ok: #00d2ff;
+  --font: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+  --ease: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --sidebar: 250px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background:
+    repeating-linear-gradient(135deg, rgba(255, 255, 255, 0.022) 0 1px, transparent 1px 7px),
+    linear-gradient(180deg, #27282c 0%, #1b1c1f 55%, #151619 100%);
+  color: var(--white);
+  font-family: var(--font);
+  font-size: 14px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+input,
+textarea,
+select,
+button {
+  font: inherit;
+  color: inherit;
+}
+
+a {
+  color: inherit;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+/* .gate и .app задают display — без этого правила атрибут hidden не работает */
+[hidden] {
+  display: none !important;
+}
+
+/* ------------------------------------------------------------------ кнопки */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 11px 18px;
+  border: 1px solid var(--line);
+  background: transparent;
+  color: var(--white);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  transition: background 0.2s var(--ease), border-color 0.2s var(--ease), color 0.2s var(--ease);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.btn:hover {
+  border-color: rgba(255, 102, 0, 0.55);
+}
+
+.btn--primary {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+
+.btn--primary:hover {
+  background: #ff7a1f;
+  border-color: #ff7a1f;
+}
+
+.btn--ghost {
+  color: #c9cdd4;
+}
+
+.btn--ghost:hover {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.btn--sm {
+  padding: 8px 13px;
+  font-size: 12px;
+}
+
+.btn--icon {
+  padding: 6px 9px;
+  font-size: 12px;
+  line-height: 1;
+}
+
+.btn--danger:hover {
+  border-color: var(--danger);
+  color: #ff7a9c;
+}
+
+.btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* ------------------------------------------------------------------- вход */
+
+.gate {
+  min-height: 100%;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+}
+
+.gate__card {
+  width: min(400px, 100%);
+  display: grid;
+  gap: 18px;
+  padding: 34px;
+  border: 1px solid var(--line);
+  background: rgba(20, 21, 23, 0.9);
+  box-shadow: 0 40px 90px -40px #000;
+}
+
+.gate__mark {
+  font-family: var(--font);
+  font-size: 34px;
+  font-weight: 700;
+  letter-spacing: -0.11em;
+  line-height: 1;
+  color: var(--white);
+  -webkit-text-stroke: 0.03em #1b1c1f;
+  paint-order: stroke fill;
+  text-shadow: 0 0 22px rgba(255, 102, 0, 0.3);
+}
+
+.gate__title {
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.gate__text {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.gate__error {
+  min-height: 18px;
+  font-size: 12.5px;
+  color: #ff7a9c;
+}
+
+/* ------------------------------------------------------------------ поля */
+
+.field {
+  display: grid;
+  gap: 7px;
+}
+
+.field__label {
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted-2);
+}
+
+.field__hint {
+  font-size: 11.5px;
+  color: var(--muted-2);
+}
+
+.field__input,
+.field__area,
+.field__select {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  background: rgba(0, 0, 0, 0.35);
+  color: var(--white);
+  font-size: 13.5px;
+  transition: border-color 0.2s var(--ease), background 0.2s var(--ease);
+}
+
+.field__input:focus,
+.field__area:focus,
+.field__select:focus {
+  outline: none;
+  border-color: var(--accent);
+  background: rgba(255, 102, 0, 0.06);
+}
+
+.field__area {
+  min-height: 84px;
+  resize: vertical;
+  line-height: 1.55;
+}
+
+.field__area--rich {
+  min-height: 110px;
+}
+
+.field__row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 8px;
+  align-items: start;
+}
+
+.field__select {
+  appearance: none;
+  background-image: linear-gradient(45deg, transparent 50%, var(--muted) 50%),
+    linear-gradient(135deg, var(--muted) 50%, transparent 50%);
+  background-position: calc(100% - 16px) 50%, calc(100% - 11px) 50%;
+  background-size: 5px 5px, 5px 5px;
+  background-repeat: no-repeat;
+  padding-right: 32px;
+}
+
+/* ------------------------------------------------------------------ шапка */
+
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 12px 20px;
+  border-bottom: 1px solid var(--line);
+  background: rgba(12, 13, 15, 0.94);
+  backdrop-filter: blur(12px);
+}
+
+.topbar__brand {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+}
+
+.topbar__mark {
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: -0.11em;
+  -webkit-text-stroke: 0.03em #1b1c1f;
+  paint-order: stroke fill;
+  text-shadow: 0 0 16px rgba(255, 102, 0, 0.28);
+}
+
+.topbar__sub {
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--muted-2);
+}
+
+.topbar__actions {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.dirty {
+  font-size: 11.5px;
+  color: var(--accent);
+  letter-spacing: 0.05em;
+}
+
+/* --------------------------------------------------------------- раскладка */
+
+.layout {
+  display: grid;
+  grid-template-columns: var(--sidebar) minmax(0, 1fr);
+  align-items: start;
+  min-height: calc(100vh - 110px);
+}
+
+.sidebar {
+  position: sticky;
+  top: 59px;
+  display: grid;
+  gap: 2px;
+  padding: 16px 12px;
+  border-right: 1px solid var(--line-soft);
+}
+
+.sidebar__item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 10px 12px;
+  border: 0;
+  border-left: 2px solid transparent;
+  background: none;
+  color: #b9bec7;
+  font-size: 13px;
+  text-align: left;
+  cursor: pointer;
+  transition: background 0.2s var(--ease), color 0.2s var(--ease), border-color 0.2s var(--ease);
+}
+
+.sidebar__item:hover {
+  background: rgba(255, 255, 255, 0.035);
+  color: #fff;
+}
+
+.sidebar__item.is-active {
+  background: var(--accent-soft);
+  border-left-color: var(--accent);
+  color: #fff;
+}
+
+.sidebar__num {
+  font-size: 10px;
+  color: var(--accent);
+  min-width: 18px;
+}
+
+.sidebar__count {
+  margin-left: auto;
+  font-size: 10.5px;
+  color: var(--muted-2);
+}
+
+.sidebar__sep {
+  height: 1px;
+  margin: 10px 12px;
+  background: var(--line-soft);
+}
+
+/* ---------------------------------------------------------------- редактор */
+
+.editor {
+  padding: 26px clamp(16px, 3vw, 40px) 90px;
+  max-width: 980px;
+}
+
+.panel__head {
+  display: grid;
+  gap: 8px;
+  margin-bottom: 26px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid var(--line-soft);
+}
+
+.panel__title {
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.panel__hint {
+  font-size: 13px;
+  color: var(--muted);
+  max-width: 72ch;
+}
+
+.block {
+  display: grid;
+  gap: 16px;
+  margin-bottom: 26px;
+  padding: 20px;
+  border: 1px solid var(--line-soft);
+  background: rgba(255, 255, 255, 0.015);
+}
+
+.block__head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.block__title {
+  font-size: 12px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.block__actions {
+  margin-left: auto;
+  display: flex;
+  gap: 6px;
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+/* переключатель */
+.toggle {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  font-size: 13px;
+  color: #cfd4dc;
+}
+
+.toggle input {
+  appearance: none;
+  width: 38px;
+  height: 20px;
+  border: 1px solid var(--line);
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 20px;
+  position: relative;
+  cursor: pointer;
+  transition: background 0.2s var(--ease), border-color 0.2s var(--ease);
+  flex: none;
+}
+
+.toggle input::after {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--muted);
+  transition: transform 0.2s var(--ease), background 0.2s var(--ease);
+}
+
+.toggle input:checked {
+  background: var(--accent-soft);
+  border-color: var(--accent);
+}
+
+.toggle input:checked::after {
+  transform: translateX(18px);
+  background: var(--accent);
+}
+
+/* карточка элемента списка */
+.card {
+  display: grid;
+  gap: 14px;
+  padding: 16px;
+  border: 1px solid var(--line-soft);
+  background: rgba(0, 0, 0, 0.22);
+}
+
+.card__head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.card__title {
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted-2);
+}
+
+.card__actions {
+  margin-left: auto;
+  display: flex;
+  gap: 4px;
+}
+
+/* список строк */
+.rows {
+  display: grid;
+  gap: 8px;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 8px;
+  align-items: start;
+}
+
+/* превью картинки */
+.thumb {
+  display: grid;
+  grid-template-columns: 96px 1fr;
+  gap: 12px;
+  align-items: start;
+}
+
+.thumb__img {
+  width: 96px;
+  height: 96px;
+  object-fit: cover;
+  border: 1px solid var(--line);
+  background: #000;
+}
+
+.thumb__img--empty {
+  display: grid;
+  place-items: center;
+  font-size: 11px;
+  color: var(--muted-2);
+}
+
+/* галерея загруженных */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(84px, 1fr));
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.gallery__item {
+  border: 1px solid var(--line-soft);
+  background: none;
+  padding: 0;
+  cursor: pointer;
+  aspect-ratio: 1;
+  overflow: hidden;
+}
+
+.gallery__item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.25s var(--ease);
+}
+
+.gallery__item:hover img {
+  transform: scale(1.06);
+}
+
+/* ------------------------------------------------------------- статус-бар */
+
+.statusbar {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 15;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 7px 18px;
+  border-top: 1px solid var(--line-soft);
+  background: rgba(10, 11, 13, 0.94);
+  font-size: 11.5px;
+  color: var(--muted-2);
+}
+
+.statusbar__spacer {
+  margin-left: auto;
+}
+
+/* ------------------------------------------------------------------- тост */
+
+.toast {
+  position: fixed;
+  left: 50%;
+  bottom: 44px;
+  z-index: 90;
+  max-width: min(520px, calc(100vw - 32px));
+  padding: 13px 20px;
+  translate: -50% 130%;
+  background: var(--ink-3);
+  border: 1px solid var(--line);
+  border-left: 2px solid var(--accent);
+  color: #dfe4ee;
+  font-size: 13px;
+  line-height: 1.45;
+  box-shadow: 0 18px 50px -18px #000;
+  opacity: 0;
+  transition: translate 0.35s var(--ease), opacity 0.35s var(--ease);
+  pointer-events: none;
+}
+
+.toast.is-visible {
+  translate: -50% 0;
+  opacity: 1;
+}
+
+.toast.is-error {
+  border-left-color: var(--danger);
+}
+
+.toast.is-ok {
+  border-left-color: var(--ok);
+}
+
+/* --------------------------------------------------------------- адаптив */
+
+@media (max-width: 900px) {
+  .layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .sidebar {
+    position: static;
+    top: 0;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    border-right: 0;
+    border-bottom: 1px solid var(--line-soft);
+  }
+  .sidebar__sep {
+    display: none;
+  }
+  .grid-2,
+  .grid-3 {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .topbar {
+    flex-wrap: wrap;
+  }
+  .topbar__actions {
+    width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.001ms !important;
+    animation-duration: 0.001ms !important;
+  }
+}
