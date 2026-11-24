@@ -1,0 +1,10 @@
+# Пароль и сессии админки — только на своём компьютере, в репозиторий нельзя
+admin/auth.json
+admin/sessions.json
+admin/backups/
+
+# Мусор ОС и редакторов
+Thumbs.db
+Desktop.ini
+.DS_Store
+*.log
