@@ -1,0 +1,649 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ZиО — новокузнецкая альтернатива. 5 декабря · «Резонанс»</title>
+    <meta
+      name="description"
+      content="ZиО (Zero is One) — альтернативный рок из Новокузнецка. Плотные гитары, синты из будущего, два языка. 5 декабря 2026 — «Резонанс», последний концерт старого ZиО."
+    />
+    <meta name="theme-color" content="#141517" />
+    <link rel="icon" type="image/png" sizes="512x512" href="assets/img/zio-icon.png" />
+    <link rel="apple-touch-icon" href="assets/img/zio-icon.png" />
+
+    <!-- Open Graph: превью при отправке ссылки в мессенджерах и соцсетях -->
+    <meta property="og:type" content="music.musician" />
+    <meta property="og:title" content="ZиО — мы не вернулись, мы эволюционировали" />
+    <meta
+      property="og:description"
+      content="Новокузнецкая альтернатива о возвращении мечты. 5 декабря 2026 — «Резонанс»."
+    />
+    <meta property="og:image" content="assets/img/zio-og.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:locale" content="ru_RU" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="assets/img/zio-og.png" />
+
+    <link rel="stylesheet" href="styles.css" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "MusicGroup",
+        "name": "ZиО",
+        "alternateName": ["ZiO","Zero is One"],
+        "genre": ["Alternative Rock","Neo-rock"],
+        "foundingLocation": { "@type": "Place", "name": "Новокузнецк, Россия" },
+        "member": [
+          { "@type": "Person", "name": "Сергей", "jobTitle": "Вокал · тексты" },
+          { "@type": "Person", "name": "Тёма", "jobTitle": "Гитара" },
+          { "@type": "Person", "name": "Гриша", "jobTitle": "Бас" },
+          { "@type": "Person", "name": "Ванёк", "jobTitle": "Барабаны" },
+          { "@type": "Person", "name": "Дэн", "jobTitle": "Видео · вторая гитара" }
+        ]
+      }
+    </script>
+  </head>
+
+  <body>
+    <div class="scroll-progress" id="progress" aria-hidden="true"></div>
+    <div class="grid-lines" aria-hidden="true"></div>
+    <div class="grain" aria-hidden="true"></div>
+
+    <a class="skip-link" href="#main">К содержанию</a>
+
+    <!-- ------------------------------------------------------------------ -->
+    <header class="header" id="header">
+      <div class="header__inner">
+        <a class="logo-link" href="#top" aria-label="ZиО — на главную">
+          <span class="logo-word" aria-hidden="true">ZИО</span>
+          <span>Zero is One</span>
+        </a>
+
+        <nav class="nav" aria-label="Основная навигация">
+          <a href="#manifest">Манифест</a>
+          <a href="#guardians">Стражи</a>
+          <a href="#lineup">Состав</a>
+          <a href="#show">5 декабря</a>
+          <a href="#news">Новости</a>
+          <a href="#merch">Артефакты</a>
+        </nav>
+
+        <a class="header__cta" data-link="listen" href="#" rel="noopener">
+          Слушать
+          <svg width="12" height="12" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M8 5v14l11-7z" fill="currentColor" />
+          </svg>
+        </a>
+
+        <button
+          class="burger"
+          id="burger"
+          aria-label="Меню"
+          aria-expanded="false"
+          aria-controls="mobileMenu"
+        >
+          <span></span>
+        </button>
+      </div>
+    </header>
+
+    <div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true" aria-label="Меню">
+      <a href="#manifest"><i>01</i> Манифест</a>
+      <a href="#guardians"><i>02</i> Стражи</a>
+      <a href="#lineup"><i>03</i> Состав</a>
+      <a href="#show"><i>04</i> 5 декабря</a>
+      <a href="#news"><i>05</i> Новости</a>
+      <a href="#merch"><i>06</i> Артефакты</a>
+      <a href="#contacts"><i>07</i> Связь</a>
+    </div>
+
+    <main id="main">
+      <!-- ---------------------------------------------------------------- -->
+      <section class="hero" id="top">
+        <div class="hero__glow" id="heroGlow" aria-hidden="true"></div>
+
+        <!-- обновлённый логотип (вариант 3): слитная надпись + глитч на фоне -->
+        <div class="hero__mark" aria-hidden="true">
+          <span class="hero__mark-word hero__mark-base">ZИО</span>
+          <span class="hero__mark-word hero__mark-ghost hero__mark-ghost--a">ZИО</span>
+          <span class="hero__mark-word hero__mark-ghost hero__mark-ghost--b">ZИО</span>
+        </div>
+
+        <div class="hero__inner">
+          <p class="hero__badge reveal">
+            <span class="dot" aria-hidden="true"></span>
+            <b>5 декабря</b> · Новокузнецк · «Резонанс»
+          </p>
+
+          <h1 class="hero__logo reveal" style="--d: 80ms">
+            <span class="hero__word" data-text="ZИО" aria-hidden="true">ZИО</span>
+            <span class="sr-only">ZиО — новокузнецкая альтернатива</span>
+          </h1>
+
+          <div class="hero__sub reveal" style="--d: 160ms">
+            <span>Zero is One</span>
+            <span aria-hidden="true">/</span>
+            <span>Новокузнецкая альтернатива</span>
+            <span aria-hidden="true">/</span>
+            <span><em>4</em> стража + система</span>
+          </div>
+
+          <p class="hero__line reveal" style="--d: 240ms">
+            Мы не вернулись — <b>эволюционировали</b>. Плотные гитары, синты из будущего и два языка: в английском — красота, в русском — смыслы.
+          </p>
+
+          <div class="hero__actions reveal" style="--d: 320ms">
+            <a class="btn btn--primary" data-link="listen" href="#" rel="noopener">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M8 5v14l11-7z" fill="currentColor" />
+              </svg>
+              Слушать
+            </a>
+            <a class="btn btn--ghost" href="#show">
+              <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6">
+                <path d="M4 8V6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v2" />
+                <rect x="2.5" y="8" width="19" height="11" rx="1.6" />
+                <path d="M9 12.5h6M9 16h4" />
+              </svg>
+              5 декабря · «Резонанс»
+            </a>
+          </div>
+
+          <div class="hero__meta reveal" style="--d: 400ms">
+            <span>Ближайший концерт · <b>05.12.2026</b></span>
+            <span>Город · <b>Новокузнецк</b></span>
+            <span>Статус · <b>активен</b></span>
+          </div>
+        </div>
+      </section>
+
+      <!-- ---------------------------------------------------------------- -->
+      <div class="marquee" aria-hidden="true">
+        <div class="marquee__track">
+          <div class="marquee__group">
+            <span>Не вижу</span><i>◆</i><span>Не говорю</span><i>◆</i><span>Не слышу</span><i>◆</i><span>Не делаю зла</span><i>◆</i><span>Четыре стража</span><i>◆</i><span>Пятый — ты</span><i>◆</i>
+          </div>
+          <div class="marquee__group">
+            <span>Не вижу</span><i>◆</i><span>Не говорю</span><i>◆</i><span>Не слышу</span><i>◆</i><span>Не делаю зла</span><i>◆</i><span>Четыре стража</span><i>◆</i><span>Пятый — ты</span><i>◆</i>
+          </div>
+        </div>
+      </div>
+
+      <!-- ---------------------------------------------------------------- -->
+      <section class="section" id="manifest">
+        <div class="shell">
+          <div class="section-head reveal">
+            <p class="eyebrow"><span class="num">01</span> Манифест</p>
+            <h2 class="display section-title">Год мы молчали</h2>
+          </div>
+
+          <div class="manifesto__grid">
+            <p class="manifesto__statement reveal">
+              Не потому что сдались —<br /><span class="dim">потому что</span><br /><span class="accent">перестраивались.</span>
+            </p>
+
+            <div class="manifesto__body">
+              <p class="reveal">
+                В 2021–22 мы играли для вас. Потом ушли в работу, в «взрослую жизнь», где всё стабильно и ничего не горит. Это оказалось страшнее, чем звучит: <strong>там нет мечты. Только задачи.</strong>
+              </p>
+              <p class="reveal" style="--d: 80ms">
+                Мы вернулись, чтобы это исправить. ZиО — новокузнецкая альтернатива: плотные гитары, синты из будущего. В текстах два языка сплетаются в один, как в поцелуе: в английском — красота, в русском — смыслы.
+              </p>
+              <p class="reveal" style="--d: 160ms">
+                <strong>Мечтатели — это дети. Взрослые — дети, утратившие способность мечтать.</strong> Этот сайт и этот концерт — попытка вернуть способность.
+              </p>
+
+              <dl class="manifesto__facts reveal" style="--d: 220ms">
+                <div class="fact">
+                  <dt>Жанр</dt>
+                  <dd>Альтернатива</dd>
+                </div>
+                <div class="fact">
+                  <dt>Город</dt>
+                  <dd>Новокузнецк</dd>
+                </div>
+                <div class="fact">
+                  <dt>Языки</dt>
+                  <dd>RU / EN</dd>
+                </div>
+              </dl>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ---------------------------------------------------------------- -->
+      <section class="section" id="guardians">
+        <div class="shell">
+          <div class="section-head reveal">
+            <p class="eyebrow"><span class="num">02</span> Лор</p>
+            <h2 class="display section-title">Четыре стража</h2>
+            <p class="lede" style="max-width: 62ch">
+              Это не костюмы. Это гипербола того, что уже произошло с нами — и с вами: мы вечно в наушниках, не говорим голосом, не видим мира и не действуем. Технология — инструмент. Важно, в чьих она руках.
+            </p>
+          </div>
+
+          <div class="guardians">
+            <!-- 1 -->
+            <article class="guardian reveal" tabindex="0">
+              <div class="guardian__hex">
+                <span class="guardian__num">01 / VR</span>
+                <svg class="guardian__glyph" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                  <path d="M3 24s7.5-11 21-11 21 11 21 11-7.5 11-21 11S3 24 3 24Z" />
+                  <circle cx="24" cy="24" r="6.2" />
+                  <path d="M24 2v4M24 42v4M2 24h4M42 24h4" opacity=".5" />
+                </svg>
+                <span class="guardian__verb">Не вижу</span>
+              </div>
+              <dl class="guardian__text">
+                <dt>VR</dt>
+                <dd>Глаза из будущего. Я вижу то, что хочу видеть. И не вижу того, что разрушает.</dd>
+              </dl>
+            </article>
+
+            <!-- 2 -->
+            <article class="guardian reveal" tabindex="0" style="--d: 60ms">
+              <div class="guardian__hex">
+                <span class="guardian__num">02 / Маска</span>
+                <svg class="guardian__glyph" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                  <path d="M10 12h28v11c0 7.6-6.3 13.8-14 13.8S10 30.6 10 23V12Z" />
+                  <path d="M17 21h5M26 21h5M20 29c2.4 1.6 5.6 1.6 8 0" />
+                  <path d="M14 8.5h20" opacity=".5" />
+                </svg>
+                <span class="guardian__verb">Не говорю</span>
+              </div>
+              <dl class="guardian__text">
+                <dt>Маска</dt>
+                <dd>Иногда молчание — единственный способ сказать правду.</dd>
+              </dl>
+            </article>
+
+            <!-- 3 -->
+            <article class="guardian reveal" tabindex="0" style="--d: 120ms">
+              <div class="guardian__hex">
+                <span class="guardian__num">03 / Наушники</span>
+                <svg class="guardian__glyph" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                  <path d="M8 27v-4a16 16 0 0 1 32 0v4" />
+                  <rect x="5" y="26" width="8" height="14" rx="4" />
+                  <rect x="35" y="26" width="8" height="14" rx="4" />
+                  <path d="M24 6v-3" opacity=".5" />
+                </svg>
+                <span class="guardian__verb">Не слышу</span>
+              </div>
+              <dl class="guardian__text">
+                <dt>Наушники</dt>
+                <dd>Мир шумит. Я выбираю, что впустить.</dd>
+              </dl>
+            </article>
+
+            <!-- 4 -->
+            <article class="guardian reveal" tabindex="0" style="--d: 180ms">
+              <div class="guardian__hex">
+                <span class="guardian__num">04 / Барабаны</span>
+                <svg class="guardian__glyph" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                  <ellipse cx="24" cy="34" rx="13" ry="6.5" />
+                  <path d="M24 34V13M24 34l-8-19M24 34l8-19" />
+                  <circle cx="24" cy="34" r="2.6" />
+                  <path d="M11 40h26" opacity=".5" />
+                </svg>
+                <span class="guardian__verb">Не делаю</span>
+              </div>
+              <dl class="guardian__text">
+                <dt>Барабаны</dt>
+                <dd>Действие — единственное, что нельзя подделать.</dd>
+              </dl>
+            </article>
+          </div>
+
+          <p class="lede reveal" style="margin-top: 34px; max-width: 52ch">
+            Пятый страж — зритель. <span style="color: var(--white)">Его выбираете вы.</span>
+          </p>
+        </div>
+      </section>
+
+      <!-- ---------------------------------------------------------------- -->
+      <section class="section" id="lineup">
+        <div class="shell">
+          <div class="section-head reveal">
+            <p class="eyebrow"><span class="num">03</span> Состав</p>
+            <h2 class="display section-title">Нас стало четверо</h2>
+            <p class="lede" style="max-width: 60ch">
+              И это не считая системы. Изменение в составе проживается каждый раз как в первый раз — но мы стали целостнее по звучанию.
+            </p>
+          </div>
+
+          <div class="lineup">
+            <article class="member reveal">
+              <span class="member__idx">01</span>
+              <h3 class="member__name">Сергей</h3>
+              <p class="member__role">Вокал · тексты</p>
+              <p class="member__note">
+                Архитектор системы. Уходит с гитары на микрофон: задача — держать зал, а не гриф.
+              </p>
+              <span class="member__tag">Голос</span>
+            </article>
+
+            <article class="member reveal" style="--d: 60ms">
+              <span class="member__idx">02</span>
+              <h3 class="member__name">Тёма</h3>
+              <p class="member__role">Гитара</p>
+              <p class="member__note">
+                Слышит аранжировку целиком, а не свою партию. Организатор «Резонанса».
+              </p>
+              <span class="member__tag">Структура</span>
+            </article>
+
+            <article class="member reveal" style="--d: 120ms">
+              <span class="member__idx">03</span>
+              <h3 class="member__name">Гриша</h3>
+              <p class="member__role">Бас</p>
+              <p class="member__note">
+                Выучил семь песен за месяц, потому что поверил в это раньше остальных.
+              </p>
+              <span class="member__tag">Основание</span>
+            </article>
+
+            <article class="member reveal" style="--d: 180ms">
+              <span class="member__idx">04</span>
+              <h3 class="member__name">Ванёк</h3>
+              <p class="member__role">Барабаны</p>
+              <p class="member__note">
+                Говорит мало, держит всё. Тембр дня — на нём.
+              </p>
+              <span class="member__tag">Пульс</span>
+            </article>
+
+            <article class="member reveal" style="--d: 240ms">
+              <span class="member__idx">05</span>
+              <h3 class="member__name">Дэн</h3>
+              <p class="member__role">Видео · вторая гитара</p>
+              <p class="member__note">
+                Снимает то, что мы не видим, и учится играть то, что мы слышим.
+              </p>
+              <span class="member__tag">Взгляд</span>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ---------------------------------------------------------------- -->
+      <section class="show" id="show">
+        <div class="shell">
+          <div class="show__grid">
+            <div class="reveal">
+              <p class="eyebrow"><span class="num">04</span> Ближайший концерт</p>
+
+              <div class="show__date">
+                <span class="d">05</span>
+                <span class="my">декабря<br />2026</span>
+              </div>
+
+              <h2 class="display show__name">«Резонанс<span class="q">»</span></h2>
+
+              <p class="show__where">
+                <span>Новокузнецк</span>
+                <span aria-hidden="true">/</span>
+                <span>с Butleggers</span>
+                <span aria-hidden="true">/</span>
+                <span>живой звук</span>
+              </p>
+
+              <p class="show__desc">
+                Последний концерт старого ZиО. Того, которого вы помните. Мы выходим без представления — сразу «Hey, you!», потому что за год тишины слов уже не хватает. Между песнями Сергей расскажет, где мы были этот год и почему вернулись.
+              </p>
+            </div>
+
+            <div class="show__panel reveal" style="--d: 120ms">
+              <div>
+                <p class="eyebrow" style="margin-bottom: 12px">До выхода на сцену</p>
+                <div class="countdown" id="countdown" aria-live="polite">
+                  <div><b data-days>—</b><span>дней</span></div>
+                  <div><b data-hours>—</b><span>часов</span></div>
+                  <div><b data-minutes>—</b><span>минут</span></div>
+                  <div><b data-seconds>—</b><span>секунд</span></div>
+                </div>
+              </div>
+
+              <a class="btn btn--primary" data-link="tickets" href="#" rel="noopener">
+                <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6">
+                <path d="M4 8V6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v2" />
+                <rect x="2.5" y="8" width="19" height="11" rx="1.6" />
+                <path d="M9 12.5h6M9 16h4" />
+              </svg>
+                Билеты
+              </a>
+
+              <div>
+                <p class="eyebrow" style="margin-bottom: 10px">Сет-лист</p>
+                <ol class="setlist">
+                  <li><i>01</i> Hey, you!</li>
+                  <li><i>02</i> Hush</li>
+                  <li><i>03</i> Global Games</li>
+                  <li><i>04</i> In Flames</li>
+                  <li><i>05</i> Rage</li>
+                  <li><i>06</i> Spirit</li>
+                  <li><i>07</i> Escape</li>
+                  <li><i>08</i> Steel Heart</li>
+                  <li><i>09</i> Truth <em>финал</em></li>
+                </ol>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ---------------------------------------------------------------- -->
+      <section class="section" id="news">
+        <div class="shell">
+          <div class="section-head reveal">
+            <p class="eyebrow"><span class="num">05</span> Дневник</p>
+            <h2 class="display section-title">Что происходит</h2>
+            <p class="lede" style="max-width: 58ch">Короткие записи о репетициях, записи и всём, что вокруг концерта.</p>
+          </div>
+
+          <div class="news">
+            <article class="post reveal">
+              <p class="post__date">20 ноября 2026</p>
+              <h3 class="post__title">Собрали сет-лист «Резонанса»</h3>
+              <p class="post__text">Девять песен, живой звук, без фонограмм. Репетируем в том же порядке, в котором играем — чтобы к 5 декабря руки знали всё сами.</p>
+            </article>
+
+            <article class="post reveal" style="--d: 60ms">
+              <p class="post__date">6 ноября 2026</p>
+              <h3 class="post__title">Вернулись в репетиционный зал</h3>
+              <p class="post__text">Год тишины закончился. Новый состав, новый материал и старые песни, которые теперь звучат иначе.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ---------------------------------------------------------------- -->
+      <section class="section" id="releases">
+        <div class="shell">
+          <div class="section-head reveal">
+            <p class="eyebrow"><span class="num">06</span> Дискография</p>
+            <h2 class="display section-title">Что уже записано</h2>
+            <p class="lede" style="max-width: 58ch">Синглы и записи, которые можно включить прямо сейчас.</p>
+          </div>
+
+          <div class="releases">
+            <article class="release reveal">
+              <span class="release__cover release__cover--empty" aria-hidden="true">ZИО</span>
+              <div class="release__meta">
+                <p class="release__type">Сингл · 2026</p>
+                <h3 class="release__name">Truth</h3>
+              </div>
+            </article>
+
+            <article class="release reveal" style="--d: 60ms">
+              <span class="release__cover release__cover--empty" aria-hidden="true">ZИО</span>
+              <div class="release__meta">
+                <p class="release__type">Сингл · 2025</p>
+                <h3 class="release__name">Escape</h3>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ---------------------------------------------------------------- -->
+      <section class="section" id="quotes">
+        <div class="shell">
+          <div class="section-head reveal">
+            <p class="eyebrow"><span class="num">07</span> Голосом</p>
+            <h2 class="display section-title">Без редактуры</h2>
+          </div>
+
+          <div class="quotes">
+            <figure class="quote quote--lg reveal">
+              <span class="quote__mark" aria-hidden="true">“</span>
+              <blockquote>
+                Мы не попрощались, а обещали свидеться в каком-то будущем. Время пришло.
+              </blockquote>
+              <figcaption>Сергей · лидер, вокал</figcaption>
+            </figure>
+
+            <figure class="quote quote--sm reveal" style="--d: 60ms">
+              <span class="quote__mark" aria-hidden="true">“</span>
+              <blockquote>
+                Я ожидал, что не вставит. Что охладел к музыке. Но всё наоборот: я был приятно удивлён тому, как мы целостно звучим.
+              </blockquote>
+              <figcaption>О первой репетиции</figcaption>
+            </figure>
+
+            <figure class="quote quote--sm reveal" style="--d: 120ms">
+              <span class="quote__mark" aria-hidden="true">“</span>
+              <blockquote>
+                Есть страх, в силу различных обстоятельств. Но этот страх не парализует.
+              </blockquote>
+              <figcaption>Про страх снова исчезнуть</figcaption>
+            </figure>
+
+            <figure class="quote quote--lg reveal" style="--d: 180ms">
+              <span class="quote__mark" aria-hidden="true">“</span>
+              <blockquote>
+                Мы не вернулись — эволюционировали. Были гусеницей, впали в состояние куколки, а теперь — смотрите сами.
+              </blockquote>
+              <figcaption>Сергей · финальный образ</figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <!-- ---------------------------------------------------------------- -->
+      <section class="section" id="merch">
+        <div class="shell">
+          <div class="section-head reveal">
+            <p class="eyebrow"><span class="num">08</span> Артефакты</p>
+            <h2 class="display section-title">Физически существуем</h2>
+            <p class="lede" style="max-width: 58ch">
+              Линейка напечатана на 3D-принтере: брелоки на чипах домофона, медиаторы, подставки. Печатаем под заказ — не заводим товар, который нельзя отдать за 7 дней.
+            </p>
+          </div>
+
+          <div class="merch">
+            <article class="item reveal">
+              <span class="item__shape" aria-hidden="true"></span>
+              <div class="item__top">
+                <p class="item__kind">Хит · 3D-печать</p>
+                <h3 class="item__name">Брелок на чипе домофона</h3>
+              </div>
+              <div class="item__bottom">
+                <p class="item__price">400–600 ₽</p>
+                <p class="item__note">7 версий · чёрный, белый, неон</p>
+              </div>
+            </article>
+
+            <article class="item reveal" style="--d: 60ms">
+              <span class="item__shape" aria-hidden="true"></span>
+              <div class="item__top">
+                <p class="item__kind">Мелочь, которая всегда с собой</p>
+                <h3 class="item__name">Медиаторы ZиО</h3>
+              </div>
+              <div class="item__bottom">
+                <p class="item__price">По запросу</p>
+                <p class="item__note">Набор в фирменной коробке</p>
+              </div>
+            </article>
+
+            <article class="item reveal" style="--d: 120ms">
+              <span class="item__shape" aria-hidden="true"></span>
+              <div class="item__top">
+                <p class="item__kind">Предзаказ</p>
+                <h3 class="item__name">Футболка «Четыре стража»</h3>
+              </div>
+              <div class="item__bottom">
+                <p class="item__price">1 800–2 200 ₽</p>
+                <p class="item__note">Без склада, под заказ</p>
+              </div>
+            </article>
+
+            <article class="item reveal" style="--d: 180ms">
+              <span class="item__shape" aria-hidden="true"></span>
+              <div class="item__top">
+                <p class="item__kind">Самый простой вход</p>
+                <h3 class="item__name">Стикерпак</h3>
+              </div>
+              <div class="item__bottom">
+                <p class="item__price">200–300 ₽</p>
+                <p class="item__note">6 стикеров, чёрно-белые</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ---------------------------------------------------------------- -->
+      <section class="cta">
+        <div class="cta__glow" aria-hidden="true"></div>
+        <div class="shell cta__inner">
+          <p class="eyebrow reveal"><span class="num">09</span> Вход в систему</p>
+          <h2 class="display cta__title reveal">Мы будем ждать вас в раю</h2>
+          <p class="cta__text reveal">
+            Если вы ждали — не зря. Если скучали — мы тоже. Слушайте первым, приходите 5 декабря и заберите артефакт, который можно держать в руке.
+          </p>
+          <div class="hero__actions reveal">
+            <a class="btn btn--primary" data-link="listen" href="#" rel="noopener">Слушать</a>
+            <a class="btn btn--ghost" data-link="tickets" href="#" rel="noopener">Прийти 5 декабря</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ------------------------------------------------------------------ -->
+    <footer class="footer" id="contacts">
+      <div class="shell">
+        <div class="footer__top">
+          <div class="footer__brand">
+            <span class="footer__mark" aria-hidden="true">ZИО</span>
+            <p>
+              ZиО · Zero is One. Новокузнецкая альтернатива о возвращении мечты. В английском — красота, в русском — смыслы.
+            </p>
+          </div>
+
+          <nav class="footer__links" aria-label="Ссылки">
+            <a data-link="vk" href="#" rel="noopener">ВКонтакте</a>
+            <a data-link="listen" href="#" rel="noopener">Яндекс.Музыка</a>
+            <a data-link="telegram" href="#" rel="noopener">Telegram</a>
+            <a data-link="tickets" href="#" rel="noopener">Билеты</a>
+            <a data-link="email" href="#" rel="noopener">Почта для организаторов</a>
+            <a data-link="merch" href="#" rel="noopener">Заказать артефакт</a>
+          </nav>
+        </div>
+
+        <div class="footer__bottom">
+          <span>© 2026 ZиО · Новокузнецк</span>
+          <span>Five nights · four guardians · one system</span>
+          <span>Сайт собран ZCode</span>
+        </div>
+      </div>
+    </footer>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+    <script src="site.config.js" defer></script>
+    <script src="app.js" defer></script>
+  </body>
+</html>
